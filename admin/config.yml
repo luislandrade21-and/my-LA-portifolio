@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: luislandrade21-and/portifoliola
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - file: "index.html"
+        label: "Página Inicial"
+        name: "home"
+        fields:
+          - { label: "Conteúdo", name: "body", widget: "markdown" }
