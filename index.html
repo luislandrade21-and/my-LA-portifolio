@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio LA | Luis Andrade - Arquiteto e Urbanista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-image {
+            background-image: url('https://static.wixstatic.com/media/ea66f0de45ec4109b5eb190bed2244d1.jpg/v1/fill/w_1024,h_1024,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ea66f0de45ec4109b5eb190bed2244d1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: #e5e7eb;
+            transform: translateX(-50%);
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-drafting-compass text-[#546c8c] text-xl mr-2"></i>
+                    <span class="text-xl font-bold text-[#546c8c]">Portfólio LA</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-[#546c8c] px-3 py-2 hover:bg-blue-50 rounded">Início</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-[#546c8c] px-3 py-2 hover:bg-blue-50 rounded">Sobre</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-[#546c8c] px-3 py-2 hover:bg-blue-50 rounded">Portfólio</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-[#546c8c] px-3 py-2 hover:bg-blue-50 rounded">Serviços</a>
+                    <a href="#contact" class="nav-link bg-[#546c8c] text-white px-4 py-2 rounded-lg hover:bg-[#3a4c63] transition duration-300">Contato</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl text-[#b8ccdc]"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-[#546c8c]">Início</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-[#546c8c]">Sobre</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-[#546c8c]">Portfólio</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-[#546c8c]">Serviços</a>
+                <a href="#contact" class="block px-3 py-2 bg-[#546c8c] text-white rounded-lg hover:bg-[#3a4c63] transition duration-300">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image pt-16">
+        <div class="h-full flex items-center justify-center bg-black bg-opacity-50">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Luis Andrade</h1>
+                <h2 class="text-2xl md:text-3xl text-blue-300 mb-8">Arquiteto e Urbanista</h2>
+                <p class="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
+                    Recém-graduado em Arquitetura e Urbanismo, trago uma paixão profunda pela criação de espaços sustentáveis e inovadores.
+                </p>
+                <a href="#portfolio" class="inline-block bg-[#546c8c] hover:bg-[#3a4c63] text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                    Ver Portfólio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Sobre Mim</h2>
+                <div class="w-20 h-1 bg-[#b8ccdc] mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg" 
+                         alt="Luis Andrade" 
+                         class="rounded-full w-64 h-64 object-cover mx-auto shadow-xl">
+                </div>
+                
+                <div class="md:w-2/3">
+                    <p class="text-lg text-gray-600 mb-8">
+                        Especializado em paisagismo e planejamento urbano, com foco na preservação do patrimônio histórico-cultural. 
+                        A formação acadêmica foi fundamental para ampliar meu embasamento teórico e minha busca contínua por conhecimento 
+                        nas diversas áreas da Arquitetura e Urbanismo.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-star mr-2 text-[#b8ccdc]"></i> Interesses
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Planejamento e projeto urbano
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Paisagismo e paisagem urbana
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Patrimônio histórico-cultural
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Projetos sustentáveis e inovadores
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-language mr-2 text-[#b8ccdc]"></i> Idiomas
+                            </h3>
+                            <div class="mb-4">
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Português</span>
+                                    <span class="text-gray-500">Nativo</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-[#546c8c] h-2.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700">Inglês</span>
+                                    <span class="text-gray-500">C1</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-[#546c8c] h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Formação e Experiências</h2>
+                <div class="w-20 h-1 bg-[#546c8c] mx-auto"></div>
+            </div>
+            
+            <div class="relative timeline">
+                <!-- Timeline Item 1 -->
+                <div class="mb-12 flex flex-col md:flex-row items-start">
+                    <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold text-[#546c8c]">Bacharelado em Arquitetura e Urbanismo</h3>
+                            <p class="text-gray-500 mb-2">Jan 2019 - Dez 2023</p>
+                            <p class="text-gray-600">PUC-Campinas</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="mb-12 flex flex-col md:flex-row items-start">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold text-[#546c8c]">Mestrado em Ordenamento do Território e Urbanismo</h3>
+                            <p class="text-gray-500 mb-2">Set 2024 - Andamento</p>
+                            <p class="text-gray-600">Universidade de Lisboa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="mb-12 flex flex-col md:flex-row items-start">
+                    <div class="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold text-[#546c8c]">Assistente Estagiário Universitário</h3>
+                            <p class="text-gray-500 mb-2">Fev 2023 - Jan 2024</p>
+                            <p class="text-gray-600">Marcelo Novaes Paisagismo - Campinas</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="flex flex-col md:flex-row items-start">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-semibold text-[#546c8c]">Assistente Estagiário Universitário</h3>
+                            <p class="text-gray-500 mb-2">Fev 2023 - Jan 2024</p>
+                            <p class="text-gray-600">Extensão HABITAR 60+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Projetos</h2>
+                <div class="w-20 h-1 bg-[#546c8c] mx-auto"></div>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Uma seleção dos meus trabalhos acadêmicos e profissionais em arquitetura e urbanismo.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer" 
+                     onclick="openProjectModal(this)"
+                     data-title="Abre Orlas: O samba do Povo"
+                     data-description="Projeto de revitalização urbana integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória."
+                     data-image="https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg"
+                     data-location="Vitória, ES"
+                     data-date="Dez 2023"
+                     data-type="Revitalização, Projeto Urbano, Social"
+                     data-advisor="Claudio Manetti"
+                     data-area="Plano de Desenvolvimento Urbano da Região Metropolitana">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg" 
+                         alt="Projeto 1" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Abre Orlas: O samba do Povo</h3>
+                        <p class="text-gray-600">Revitalização, Projeto Urbano, Social - 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer" 
+                     onclick="openProjectModal(this)"
+                     data-title="Projeto de Paisagismo"
+                     data-description="Jardim residencial em Campinas - 2023. Projeto paisagístico completo com espécies nativas."
+                     data-image="https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg" 
+                         alt="Projeto 2" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Escola Andorinha</h3>
+                        <p class="text-gray-600">Estrutura Modular, Projeto Educacional - 2022</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer" 
+                     onclick="openProjectModal(this)"
+                     data-title="Projeto de Arquitetura Institucional"
+                     data-description="Centro de convivência para idosos - 2022. Projeto completo com acessibilidade e áreas comuns."
+                     data-image="https://static.wixstatic.com/media/f6c6d7_c690ca309ad94b0ba17354bb9a854930~mv2.jpg/v1/crop/x_0,y_242,w_1421,h_1628/fill/w_334,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-11-11%20at%2018_44_34_page-0001.jpg">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_c690ca309ad94b0ba17354bb9a854930~mv2.jpg/v1/crop/x_0,y_242,w_1421,h_1628/fill/w_334,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-11-11%20at%2018_44_34_page-0001.jpg" 
+                         alt="Projeto 3" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Projeto de Arquitetura Institucional</h3>
+                        <p class="text-gray-600">Centro de convivência para idosos - 2022</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer" 
+                     onclick="openProjectModal(this)"
+                     data-title="Projeto de Urbanismo"
+                     data-description="Plano diretor para área urbana - 2021. Proposta de reurbanização com foco em mobilidade."
+                     data-image="https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg" 
+                         alt="Projeto 4" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Projeto de Urbanismo</h3>
+                        <p class="text-gray-600">Plano diretor para área urbana - 2021</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer" 
+                     onclick="openProjectModal(this)"
+                     data-title="Projeto de Interiores"
+                     data-description="Reforma de apartamento - 2020. Projeto completo de interiores com mobiliário customizado."
+                     data-image="https://static.wixstatic.com/media/f6c6d7_2c2d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_2c2d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg" 
+                         alt="Projeto 5" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Projeto de Interiores</h3>
+                        <p class="text-gray-600">Reforma de apartamento - 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Serviços</h2>
+                <div class="w-20 h-1 bg-[#546c8c] mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-building text-[#546c8c] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Projetos Arquitetônicos</h3>
+                    <p class="text-gray-600">
+                        Desenvolvimento de projetos residenciais, comerciais e institucionais com foco em funcionalidade e estética.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-city text-[#546c8c] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Planejamento Urbano</h3>
+                    <p class="text-gray-600">
+                        Estudos e propostas para desenvolvimento urbano sustentável e inclusivo. Focado em projetos de larga escala.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-[#546c8c] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Paisagismo</h3>
+                    <p class="text-gray-600">
+                        Criação de espaços verdes integrados, priorizando sustentabilidade e harmonia com o ambiente.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-landmark text-[#546c8c] text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Patrimônio Histórico</h3>
+                    <p class="text-gray-600">
+                        Consultoria e projetos de preservação e revitalização do patrimônio, enfatizando a reabilitação urbana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
+                <div class="w-20 h-1 bg-[#546c8c] mx-auto"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md md:w-1/2">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-[#546c8c] text-xl mt-1"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Endereço</h4>
+                                    <p class="text-gray-600">Rua Octávio Cardoso Pereira 9, PT<br>2720-418</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-[#546c8c] text-xl mt-1"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Telefone</h4>
+                                    <p class="text-gray-600">+351 912113920</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-[#546c8c] text-xl mt-1"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">contato@portfolio-la.com</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <h4 class="text-lg font-medium text-gray-800 mb-4">Redes Sociais</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-[#3b82f6] hover:bg-blue-600 hover:text-white transition duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md md:w-1/2">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Envie uma Mensagem</h3>
+                        <form id="contact-form" class="space-y-6">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-gray-700 mb-2">Primeiro Nome</label>
+                                <input type="text" id="first-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#546c8c] focus:border-[#546c8c]">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-gray-700 mb-2">Sobrenome</label>
+                                <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#546c8c] focus:border-[#546c8c]">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#546c8c] focus:border-[#546c8c]">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#546c8c] focus:border-[#546c8c]"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#b8ccdc] hover:bg-[#586c8c] text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                    
+                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                        <p>Obrigado por sua mensagem! Entrarei em contato em breve.</p>
+                    </div>
+
+                        </form>
+                        
+                        <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                            <p>Obrigado por sua mensagem! Entrarei em contato em breve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-drafting-compass text-[#b8ccdc] text-2xl mr-2"></i>
+                        <h3 class="text-2xl font-bold text-[#b8ccdc]">Portfólio LA</h3>
+                    </div>
+                    <p class="text-gray-400 mt-2">Arquitetura e Urbanismo com inovação e sustentabilidade</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition duration-300">Início</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition duration-300">Sobre</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition duration-300">Portfólio</a>
+                    <a href="#services" class="text-gray-400 hover:text-white transition duration-300">Serviços</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contato</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Portfólio LA. Todos os direitos reservados.
+                </p>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-900 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <div class="flex justify-between items-start">
+                                <h3 id="modal-title" class="text-2xl leading-6 font-bold text-gray-900 mb-4"></h3>
+                                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                                    <i class="fas fa-times text-xl"></i>
+                                </button>
+                            </div>
+                            <div class="mt-2">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                    <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-lg">
+                                    <img src="https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg" 
+                                         alt="Additional project image" 
+                                         class="w-full h-64 object-cover rounded-lg">
+                                </div>
+                                <p id="modal-description" class="text-gray-600 mb-6"></p>
+                                <div class="border-t pt-4">
+                                    <h4 class="font-semibold text-lg mb-2">Detalhes do Projeto</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h5 class="font-medium text-gray-800 mb-2">Descrição</h5>
+                                            <p class="text-gray-600 mb-4">Projeto desenvolvido no âmbito do Trabalho Final de Graduação (2023), sob orientação de Claudio Manetti, integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória. A proposta visa reintegrar a população à orla do rio Santa Maria, transformando o sambódromo em um novo eixo cultural e de lazer.</p>
+                                            <p class="text-gray-600">O projeto estrutura a orla em três setores inspirados no desfile de carnaval - Preparação, Apresentação e Dispersão - com usos específicos como galpões para escolas de samba, requalificação das arquibancadas para uso permanente e novos espaços recreativos. Também propõe a reestruturação viária e parcelar do entorno, articulando aspectos sociais, culturais e urbanos para uso contínuo ao longo do ano.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-800 mb-2">Informações</h5>
+                                            <ul class="space-y-3">
+                                                <li class="flex items-start">
+                                                    <span class="font-medium text-gray-700 w-32">Tipo de projeto</span>
+                                                    <span class="text-gray-600">Estrutura Modular, Projeto Educacional</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="font-medium text-gray-700 w-32">Data</span>
+                                                    <span class="text-gray-600">Abril 2022</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="font-medium text-gray-700 w-32">Local</span>
+                                                    <span class="text-gray-600">Projeto conceitual</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="font-medium text-gray-700 w-32">Tecnologia</span>
+                                                    <span class="text-gray-600">Concreto armado modular</span>
+                                                </li>
+                                                <li class="flex items-start">
+                                                    <span class="font-medium text-gray-700 w-32">Programa</span>
+                                                    <span class="text-gray-600">Creche infantil (0-6 anos)</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just show the success message
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            const successMessage = document.getElementById('success-message');
+            successMessage.classList.remove('hidden');
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Project Modal Functions
+        function openProjectModal(element) {
+            const modal = document.getElementById('project-modal');
+            const title = element.getAttribute('data-title');
+            const description = element.getAttribute('data-description');
+            const image = element.getAttribute('data-image');
+            const location = element.getAttribute('data-location') || '';
+            const date = element.getAttribute('data-date') || '';
+            const type = element.getAttribute('data-type') || '';
+            const advisor = element.getAttribute('data-advisor') || '';
+            const area = element.getAttribute('data-area') || '';
+            
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-description').textContent = description;
+            document.getElementById('modal-image').src = image;
+            document.getElementById('modal-image').alt = title;
+            
+            // Prevent scrolling when modal is open
+            document.body.style.overflow = 'hidden';
+            modal.classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+            // Restore scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Close modal when clicking X or outside
+        document.getElementById('close-modal').addEventListener('click', closeProjectModal);
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('bg-opacity-90');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('bg-opacity-90');
+            }
+        });
+    </script>
+</body>
+</html>
