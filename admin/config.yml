@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: luislandrade21-and/portifoliola
+  repo: luislandrade21-and/my-LA-portifolio
 
 media_folder: "images"
 public_folder: "/images"
