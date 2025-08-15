@@ -304,6 +304,7 @@
             font-size: 18px;
             border-radius: 50%;
             transition: background-color 0.3s ease;
+            z-index: 10;
         }
         
         .carousel-nav:hover {
@@ -338,6 +339,92 @@
             background-color: var(--primary-color);
         }
         
+        /* Thumbnail gallery */
+        .thumbnail-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            opacity: 1;
+            border-color: var(--primary-color);
+        }
+        
+        /* Project navigation */
+        .project-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+            z-index: 20;
+        }
+        
+        .project-nav:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .project-nav.prev {
+            left: 10px;
+        }
+        
+        .project-nav.next {
+            right: 10px;
+        }
+        
+        .project-nav-title {
+            position: absolute;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .project-nav:hover .project-nav-title {
+            opacity: 1;
+        }
+        
+        .project-nav.prev .project-nav-title {
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .project-nav.next .project-nav-title {
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
         /* Placeholder project */
         .placeholder-project {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -361,6 +448,17 @@
         @media (max-width: 768px) {
             .hero-image {
                 background-attachment: scroll;
+            }
+            
+            .project-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .thumbnail {
+                width: 60px;
+                height: 60px;
             }
         }
     </style>
@@ -590,10 +688,10 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
                 <!-- Portfolio Item 1: Abre Orlas: O samba do Povo -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
+                     onclick="openProjectModal(0)"
                      data-title="Abre Orlas: O samba do Povo"
                      data-description="Projeto de revitalização urbana integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória, com foco na reintegração da população à orla do rio Santa Maria."
                      data-images='["https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg"]'
@@ -617,7 +715,7 @@
                 
                 <!-- Portfolio Item 2: Escola Andorinha -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
+                     onclick="openProjectModal(1)"
                      data-title="Escola Andorinha"
                      data-description="Projeto de estrutura modular para escola infantil, com foco em ambientes educacionais flexíveis e sustentáveis para crianças de 0 a 6 anos."
                      data-images='["https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg"]'
@@ -641,7 +739,7 @@
                 
                 <!-- Portfolio Item 3: Escola Profissionalizante Vila Aeroporto -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
+                     onclick="openProjectModal(2)"
                      data-title="Escola Profissionalizante Vila Aeroporto"
                      data-description="Projeto de escola profissionalizante com foco em formação técnica e integração comunitária, desenvolvido para a região da Vila Aeroporto."
                      data-images='["https://static.wixstatic.com/media/f6c6d7_c690ca309ad94b0ba17354bb9a854930~mv2.jpg/v1/crop/x_0,y_242,w_1421,h_1628/fill/w_334,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-11-11%20at%2018_44_34_page-0001.jpg"]'
@@ -665,7 +763,7 @@
                 
                 <!-- Portfolio Item 4: Centro de Convivência das Palmeiras -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
+                     onclick="openProjectModal(3)"
                      data-title="Centro de Convivência das Palmeiras"
                      data-description="Projeto de centro de convivência para idosos com foco em acessibilidade, conforto e promoção de atividades sociais e culturais para a terceira idade."
                      data-images='["https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg"]'
@@ -689,7 +787,7 @@
                 
                 <!-- Portfolio Item 5: Complexo Esportivo FEPASA -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
+                     onclick="openProjectModal(4)"
                      data-title="Complexo Esportivo FEPASA"
                      data-description="Projeto de complexo esportivo com múltiplas modalidades, focado em integração urbana e promoção de esportes comunitários na região da FEPASA."
                      data-images='["https://static.wixstatic.com/media/f6c6d7_2c2d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg"]'
@@ -957,6 +1055,9 @@
                                     <div class="carousel-indicators" id="carousel-indicators">
                                         <!-- Indicators will be inserted here -->
                                     </div>
+                                    <div class="thumbnail-gallery" id="thumbnail-gallery">
+                                        <!-- Thumbnails will be inserted here -->
+                                    </div>
                                 </div>
                                 <p id="modal-description" class="text-gray-600 mb-6"></p>
                                 <div class="border-t pt-4">
@@ -999,14 +1100,45 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Project Navigation Buttons -->
+        <button class="project-nav prev" id="project-prev" onclick="navigateProject(-1)">
+            <i class="fas fa-chevron-left"></i>
+            <span class="project-nav-title" id="prev-project-title">Projeto Anterior</span>
+        </button>
+        <button class="project-nav next" id="project-next" onclick="navigateProject(1)">
+            <i class="fas fa-chevron-right"></i>
+            <span class="project-nav-title" id="next-project-title">Próximo Projeto</span>
+        </button>
     </div>
     
     <script>
+        // Store all projects data
+        const projects = [];
+        
         // Loader
         window.addEventListener('load', function() {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('hidden');
             }, 500);
+            
+            // Collect all project data
+            const projectElements = document.querySelectorAll('.portfolio-item');
+            projectElements.forEach((element, index) => {
+                if (!element.classList.contains('placeholder-project')) {
+                    projects.push({
+                        element: element,
+                        title: element.getAttribute('data-title'),
+                        description: element.getAttribute('data-description'),
+                        images: JSON.parse(element.getAttribute('data-images')),
+                        location: element.getAttribute('data-location') || '',
+                        date: element.getAttribute('data-date') || '',
+                        type: element.getAttribute('data-type') || '',
+                        advisor: element.getAttribute('data-advisor') || '',
+                        area: element.getAttribute('data-area') || ''
+                    });
+                }
+            });
         });
         
         // Mobile menu toggle
@@ -1068,44 +1200,42 @@
         // Project Modal Functions
         let currentSlide = 0;
         let images = [];
+        let currentProjectIndex = 0;
         
-        function openProjectModal(element) {
+        function openProjectModal(index) {
+            currentProjectIndex = index;
+            const project = projects[index];
             const modal = document.getElementById('project-modal');
-            const title = element.getAttribute('data-title');
-            const description = element.getAttribute('data-description');
-            const imageUrls = JSON.parse(element.getAttribute('data-images'));
-            const location = element.getAttribute('data-location') || '';
-            const date = element.getAttribute('data-date') || '';
-            const type = element.getAttribute('data-type') || '';
-            const advisor = element.getAttribute('data-advisor') || '';
-            const area = element.getAttribute('data-area') || '';
             
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-description').textContent = description;
-            document.getElementById('modal-type').textContent = type;
-            document.getElementById('modal-date').textContent = date;
-            document.getElementById('modal-location').textContent = location;
-            document.getElementById('modal-advisor').textContent = advisor;
-            document.getElementById('modal-area').textContent = area;
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-description').textContent = project.description;
+            document.getElementById('modal-type').textContent = project.type;
+            document.getElementById('modal-date').textContent = project.date;
+            document.getElementById('modal-location').textContent = project.location;
+            document.getElementById('modal-advisor').textContent = project.advisor;
+            document.getElementById('modal-area').textContent = project.area;
             
             // Set project details based on title
             let details = '';
-            if (title === "Abre Orlas: O samba do Povo") {
+            if (project.title === "Abre Orlas: O samba do Povo") {
                 details = "Projeto desenvolvido no âmbito do Trabalho Final de Graduação (2023), sob orientação de Claudio Manetti, integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória. A proposta visa reintegrar a população à orla do rio Santa Maria, transformando o sambódromo em um novo eixo cultural e de lazer. O projeto estrutura a orla em três setores inspirados no desfile de carnaval - Preparação, Apresentação e Dispersão - com usos específicos como galpões para escolas de samba, requalificação das arquibancadas para uso permanente e novos espaços recreativos.";
-            } else if (title === "Escola Andorinha") {
+            } else if (project.title === "Escola Andorinha") {
                 details = "Projeto de estrutura modular para escola infantil, desenvolvido em 2022. O conceito baseia-se na criação de ambientes educacionais flexíveis e adaptáveis, utilizando sistema construtivo em concreto armado modular. O projeto contempla espaços para crianças de 0 a 6 anos, com áreas internas e externas integradas, promovendo a interação com a natureza e o aprendizado lúdico.";
-            } else if (title === "Escola Profissionalizante Vila Aeroporto") {
+            } else if (project.title === "Escola Profissionalizante Vila Aeroporto") {
                 details = "Projeto de escola profissionalizante desenvolvido para a região da Vila Aeroporto em Campinas. O conceito arquitetônico prioriza a integração entre formação técnica e comunidade, com espaços flexíveis que adaptam-se às diferentes necessidades de ensino. O projeto inclui laboratórios especializados, áreas de convivência e espaços multiuso que promovem a interação entre alunos e a comunidade local.";
-            } else if (title === "Centro de Convivência das Palmeiras") {
+            } else if (project.title === "Centro de Convivência das Palmeiras") {
                 details = "Projeto de centro de convivência para idosos focado em acessibilidade e conforto. Desenvolvido em 2022, o centro conta com áreas de lazer, atividades físicas, culturais e sociais, além de espaços de atendimento de saúde. O projeto prioriza a circulação segura, a iluminação natural e a integração entre os diversos ambientes, criando um espaço acolhedor que promove o bem-estar e a socialização da terceira idade.";
-            } else if (title === "Complexo Esportivo FEPASA") {
+            } else if (project.title === "Complexo Esportivo FEPASA") {
                 details = "Projeto de complexo esportivo desenvolvido para a região da FEPASA em Campinas. O conceito integra múltiplas modalidades esportivas em um único espaço, com foco em acessibilidade e sustentabilidade. O projeto inclui quadras poliesportivas, pista de corrida, área de ginástica ao ar livre e espaços de convivência, promovendo a integração urbana e o esporte comunitário na região.";
             }
             
             document.getElementById('modal-details').textContent = details;
             
             // Setup carousel
-            setupCarousel(imageUrls);
+            setupCarousel(project.images);
+            
+            // Update project navigation
+            updateProjectNavigation();
             
             // Prevent scrolling when modal is open
             document.body.style.overflow = 'hidden';
@@ -1118,13 +1248,16 @@
             
             const carouselTrack = document.getElementById('carousel-track');
             const indicators = document.getElementById('carousel-indicators');
+            const thumbnailGallery = document.getElementById('thumbnail-gallery');
             
-            // Clear existing slides and indicators
+            // Clear existing slides, indicators and thumbnails
             carouselTrack.innerHTML = '';
             indicators.innerHTML = '';
+            thumbnailGallery.innerHTML = '';
             
-            // Create slides
+            // Create slides, indicators and thumbnails
             images.forEach((imageUrl, index) => {
+                // Create slide
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
                 slide.innerHTML = `<img src="${imageUrl}" alt="Project image ${index + 1}" class="modal-image w-full rounded-lg">`;
@@ -1135,6 +1268,14 @@
                 indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
                 indicator.addEventListener('click', () => goToSlide(index));
                 indicators.appendChild(indicator);
+                
+                // Create thumbnail
+                const thumbnail = document.createElement('img');
+                thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+                thumbnail.src = imageUrl;
+                thumbnail.alt = `Thumbnail ${index + 1}`;
+                thumbnail.addEventListener('click', () => goToSlide(index));
+                thumbnailGallery.appendChild(thumbnail);
             });
             
             updateCarousel();
@@ -1143,11 +1284,16 @@
         function updateCarousel() {
             const carouselTrack = document.getElementById('carousel-track');
             const indicators = document.querySelectorAll('.carousel-indicator');
+            const thumbnails = document.querySelectorAll('.thumbnail');
             
             carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
+            });
+            
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.classList.toggle('active', index === currentSlide);
             });
         }
         
@@ -1168,6 +1314,37 @@
         
         document.getElementById('carousel-next').addEventListener('click', nextSlide);
         document.getElementById('carousel-prev').addEventListener('click', prevSlide);
+        
+        function updateProjectNavigation() {
+            const prevButton = document.getElementById('project-prev');
+            const nextButton = document.getElementById('project-next');
+            const prevTitle = document.getElementById('prev-project-title');
+            const nextTitle = document.getElementById('next-project-title');
+            
+            // Update previous button
+            if (currentProjectIndex > 0) {
+                prevButton.style.display = 'flex';
+                prevTitle.textContent = projects[currentProjectIndex - 1].title;
+            } else {
+                prevButton.style.display = 'none';
+            }
+            
+            // Update next button
+            if (currentProjectIndex < projects.length - 1) {
+                nextButton.style.display = 'flex';
+                nextTitle.textContent = projects[currentProjectIndex + 1].title;
+            } else {
+                nextButton.style.display = 'none';
+            }
+        }
+        
+        function navigateProject(direction) {
+            const newIndex = currentProjectIndex + direction;
+            
+            if (newIndex >= 0 && newIndex < projects.length) {
+                openProjectModal(newIndex);
+            }
+        }
         
         function closeProjectModal() {
             document.getElementById('project-modal').classList.add('hidden');
