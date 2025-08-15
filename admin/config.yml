@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: luislandrade21-and/my-la-portifolio
+  name: git-gateway
+  branch: main  # Verifique se sua branch principal é "main" (ou "master")
 
 media_folder: "images"
 public_folder: "/images"
