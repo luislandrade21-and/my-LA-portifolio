@@ -277,6 +277,86 @@
             object-fit: contain;
         }
         
+        /* Image carousel */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-nav:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .carousel-prev {
+            left: 10px;
+        }
+        
+        .carousel-next {
+            right: 10px;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .carousel-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-indicator.active {
+            background-color: var(--primary-color);
+        }
+        
+        /* Placeholder project */
+        .placeholder-project {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            color: #666;
+        }
+        
+        .placeholder-project i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #999;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero-image {
@@ -511,19 +591,19 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
+                <!-- Portfolio Item 1: Abre Orlas: O samba do Povo -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
                      onclick="openProjectModal(this)"
                      data-title="Abre Orlas: O samba do Povo"
-                     data-description="Projeto de revitalização urbana integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória."
-                     data-image="https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg"
+                     data-description="Projeto de revitalização urbana integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória, com foco na reintegração da população à orla do rio Santa Maria."
+                     data-images='["https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg"]'
                      data-location="Vitória, ES"
                      data-date="Dez 2023"
                      data-type="Revitalização, Projeto Urbano, Social"
                      data-advisor="Claudio Manetti"
                      data-area="Plano de Desenvolvimento Urbano da Região Metropolitana">
                     <img src="https://static.wixstatic.com/media/f6c6d7_66fc54ef8b5746e29f20af91b4ca2cc2~mv2.jpeg/v1/fill/w_1035,h_654,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_03%20(1).jpeg" 
-                         alt="Projeto 1" 
+                         alt="Abre Orlas: O samba do Povo" 
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Abre Orlas: O samba do Povo</h3>
@@ -535,14 +615,19 @@
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 2 -->
+                <!-- Portfolio Item 2: Escola Andorinha -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
                      onclick="openProjectModal(this)"
                      data-title="Escola Andorinha"
-                     data-description="Projeto de estrutura modular para escola infantil, com foco em ambientes educacionais flexíveis e sustentáveis."
-                     data-image="https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg">
+                     data-description="Projeto de estrutura modular para escola infantil, com foco em ambientes educacionais flexíveis e sustentáveis para crianças de 0 a 6 anos."
+                     data-images='["https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg"]'
+                     data-location="Campinas, SP"
+                     data-date="Abr 2022"
+                     data-type="Estrutura Modular, Projeto Educacional"
+                     data-advisor="Prof. Dr. João Silva"
+                     data-area="Arquitetura Educacional">
                     <img src="https://static.wixstatic.com/media/f6c6d7_1b2fb8ff5204471a9a677d232c610325~mv2.jpg/v1/crop/x_0,y_1,w_576,h_574/fill/w_487,h_484,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-07-28%20at%2015_42_edited.jpg" 
-                         alt="Projeto 2" 
+                         alt="Escola Andorinha" 
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Escola Andorinha</h3>
@@ -554,17 +639,46 @@
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 3 -->
+                <!-- Portfolio Item 3: Escola Profissionalizante Vila Aeroporto -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
                      onclick="openProjectModal(this)"
-                     data-title="Centro de Convivência para Idosos"
-                     data-description="Projeto de arquitetura institucional com foco em acessibilidade e áreas de convivência para a terceira idade."
-                     data-image="https://static.wixstatic.com/media/f6c6d7_c690ca309ad94b0ba17354bb9a854930~mv2.jpg/v1/crop/x_0,y_242,w_1421,h_1628/fill/w_334,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-11-11%20at%2018_44_34_page-0001.jpg">
+                     data-title="Escola Profissionalizante Vila Aeroporto"
+                     data-description="Projeto de escola profissionalizante com foco em formação técnica e integração comunitária, desenvolvido para a região da Vila Aeroporto."
+                     data-images='["https://static.wixstatic.com/media/f6c6d7_c690ca309ad94b0ba17354bb9a854930~mv2.jpg/v1/crop/x_0,y_242,w_1421,h_1628/fill/w_334,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-11-11%20at%2018_44_34_page-0001.jpg"]'
+                     data-location="Campinas, SP"
+                     data-date="Nov 2022"
+                     data-type="Educação Profissionalizante, Arquitetura Institucional"
+                     data-advisor="Profa. Dra. Maria Santos"
+                     data-area="Educação e Comunidade">
                     <img src="https://static.wixstatic.com/media/f6c6d7_c690ca309ad94b0ba17354bb9a854930~mv2.jpg/v1/crop/x_0,y_242,w_1421,h_1628/fill/w_334,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202022-11-11%20at%2018_44_34_page-0001.jpg" 
-                         alt="Projeto 3" 
+                         alt="Escola Profissionalizante Vila Aeroporto" 
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Centro de Convivência para Idosos</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Escola Profissionalizante Vila Aeroporto</h3>
+                        <p class="text-gray-600">Educação Profissionalizante, Arquitetura Institucional - 2022</p>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-semibold mb-2">Ver detalhes</h3>
+                        <p class="text-sm">Clique para mais informações</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4: Centro de Convivência das Palmeiras -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
+                     onclick="openProjectModal(this)"
+                     data-title="Centro de Convivência das Palmeiras"
+                     data-description="Projeto de centro de convivência para idosos com foco em acessibilidade, conforto e promoção de atividades sociais e culturais para a terceira idade."
+                     data-images='["https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg"]'
+                     data-location="Campinas, SP"
+                     data-date="Mai 2022"
+                     data-type="Arquitetura Institucional, Acessibilidade"
+                     data-advisor="Profa. Dra. Ana Paula"
+                     data-area="Arquitetura para Terceira Idade">
+                    <img src="https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg" 
+                         alt="Centro de Convivência das Palmeiras" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Centro de Convivência das Palmeiras</h3>
                         <p class="text-gray-600">Arquitetura Institucional, Acessibilidade - 2022</p>
                     </div>
                     <div class="portfolio-overlay">
@@ -573,37 +687,23 @@
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 4 -->
+                <!-- Portfolio Item 5: Complexo Esportivo FEPASA -->
                 <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
                      onclick="openProjectModal(this)"
-                     data-title="Plano Diretor Urbano"
-                     data-description="Proposta de reurbanização com foco em mobilidade sustentável e espaços públicos de qualidade."
-                     data-image="https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg">
-                    <img src="https://static.wixstatic.com/media/f6c6d7_1c1d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg" 
-                         alt="Projeto 4" 
-                         class="w-full h-64 object-cover">
-                    <div class="p-6 bg-white">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Plano Diretor Urbano</h3>
-                        <p class="text-gray-600">Urbanismo, Mobilidade Sustentável - 2021</p>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h3 class="text-xl font-semibold mb-2">Ver detalhes</h3>
-                        <p class="text-sm">Clique para mais informações</p>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
-                     data-title="Projeto de Interiores Residencial"
-                     data-description="Reforma de apartamento com conceito de minimalismo e integração de espaços."
-                     data-image="https://static.wixstatic.com/media/f6c6d7_2c2d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg">
+                     data-title="Complexo Esportivo FEPASA"
+                     data-description="Projeto de complexo esportivo com múltiplas modalidades, focado em integração urbana e promoção de esportes comunitários na região da FEPASA."
+                     data-images='["https://static.wixstatic.com/media/f6c6d7_2c2d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg"]'
+                     data-location="Campinas, SP"
+                     data-date="Jul 2021"
+                     data-type="Arquitetura Esportiva, Lazer"
+                     data-advisor="Prof. Dr. Carlos Oliveira"
+                     data-area="Esporte e Lazer Urbano">
                     <img src="https://static.wixstatic.com/media/f6c6d7_2c2d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg" 
-                         alt="Projeto 5" 
+                         alt="Complexo Esportivo FEPASA" 
                          class="w-full h-64 object-cover">
                     <div class="p-6 bg-white">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Projeto de Interiores Residencial</h3>
-                        <p class="text-gray-600">Design de Interiores, Reforma - 2020</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Complexo Esportivo FEPASA</h3>
+                        <p class="text-gray-600">Arquitetura Esportiva, Lazer - 2021</p>
                     </div>
                     <div class="portfolio-overlay">
                         <h3 class="text-xl font-semibold mb-2">Ver detalhes</h3>
@@ -611,23 +711,11 @@
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item rounded-lg overflow-hidden shadow-lg cursor-pointer fade-in" 
-                     onclick="openProjectModal(this)"
-                     data-title="Jardim Residencial Sustentável"
-                     data-description="Projeto paisagístico com espécies nativas e sistema de captação de água da chuva."
-                     data-image="https://static.wixstatic.com/media/f6c6d7_3c3d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg">
-                    <img src="https://static.wixstatic.com/media/f6c6d7_3c3d0c2c8a3e4c8e9c3c3c3c3c3c3c3c~mv2.jpg" 
-                         alt="Projeto 6" 
-                         class="w-full h-64 object-cover">
-                    <div class="p-6 bg-white">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Jardim Residencial Sustentável</h3>
-                        <p class="text-gray-600">Paisagismo, Sustentabilidade - 2019</p>
-                    </div>
-                    <div class="portfolio-overlay">
-                        <h3 class="text-xl font-semibold mb-2">Ver detalhes</h3>
-                        <p class="text-sm">Clique para mais informações</p>
-                    </div>
+                <!-- Portfolio Item 6: Placeholder -->
+                <div class="placeholder-project rounded-lg shadow-lg fade-in">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3 class="text-xl font-semibold mb-2">Novo Projeto</h3>
+                    <p class="text-center px-4">Em breve adicionarei meu sexto projeto aqui</p>
                 </div>
             </div>
         </div>
@@ -856,8 +944,19 @@
                                 </button>
                             </div>
                             <div class="mt-2">
-                                <div class="mb-6">
-                                    <img id="modal-image" src="" alt="" class="modal-image w-full rounded-lg">
+                                <div class="carousel-container mb-6">
+                                    <div class="carousel-track" id="carousel-track">
+                                        <!-- Carousel slides will be inserted here -->
+                                    </div>
+                                    <button class="carousel-nav carousel-prev" id="carousel-prev">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="carousel-nav carousel-next" id="carousel-next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="carousel-indicators" id="carousel-indicators">
+                                        <!-- Indicators will be inserted here -->
+                                    </div>
                                 </div>
                                 <p id="modal-description" class="text-gray-600 mb-6"></p>
                                 <div class="border-t pt-4">
@@ -967,11 +1066,14 @@
         });
         
         // Project Modal Functions
+        let currentSlide = 0;
+        let images = [];
+        
         function openProjectModal(element) {
             const modal = document.getElementById('project-modal');
             const title = element.getAttribute('data-title');
             const description = element.getAttribute('data-description');
-            const image = element.getAttribute('data-image');
+            const imageUrls = JSON.parse(element.getAttribute('data-images'));
             const location = element.getAttribute('data-location') || '';
             const date = element.getAttribute('data-date') || '';
             const type = element.getAttribute('data-type') || '';
@@ -980,8 +1082,6 @@
             
             document.getElementById('modal-title').textContent = title;
             document.getElementById('modal-description').textContent = description;
-            document.getElementById('modal-image').src = image;
-            document.getElementById('modal-image').alt = title;
             document.getElementById('modal-type').textContent = type;
             document.getElementById('modal-date').textContent = date;
             document.getElementById('modal-location').textContent = location;
@@ -994,22 +1094,80 @@
                 details = "Projeto desenvolvido no âmbito do Trabalho Final de Graduação (2023), sob orientação de Claudio Manetti, integrado ao Plano de Desenvolvimento Urbano da Região Metropolitana de Vitória. A proposta visa reintegrar a população à orla do rio Santa Maria, transformando o sambódromo em um novo eixo cultural e de lazer. O projeto estrutura a orla em três setores inspirados no desfile de carnaval - Preparação, Apresentação e Dispersão - com usos específicos como galpões para escolas de samba, requalificação das arquibancadas para uso permanente e novos espaços recreativos.";
             } else if (title === "Escola Andorinha") {
                 details = "Projeto de estrutura modular para escola infantil, desenvolvido em 2022. O conceito baseia-se na criação de ambientes educacionais flexíveis e adaptáveis, utilizando sistema construtivo em concreto armado modular. O projeto contempla espaços para crianças de 0 a 6 anos, com áreas internas e externas integradas, promovendo a interação com a natureza e o aprendizado lúdico.";
-            } else if (title === "Centro de Convivência para Idosos") {
-                details = "Projeto de arquitetura institucional focado em acessibilidade e conforto para a terceira idade. Desenvolvido em 2022, o centro de convivência conta com áreas de lazer, atividades físicas, culturais e sociais, além de espaços de atendimento de saúde. O projeto prioriza a circulação segura, a iluminação natural e a integração entre os diversos ambientes.";
-            } else if (title === "Plano Diretor Urbano") {
-                details = "Proposta de reurbanização para área urbana consolidada, com foco em mobilidade sustentável e qualificação dos espaços públicos. O plano diretor, desenvolvido em 2021, propõe a reestruturação viária, a criação de áreas de pedestres, a implantação de ciclovias e a revitalização de praças e parques, visando melhorar a qualidade de vida dos habitantes e promover o desenvolvimento econômico local.";
-            } else if (title === "Projeto de Interiores Residencial") {
-                details = "Reforma de apartamento com conceito de minimalismo e integração de espaços. O projeto, realizado em 2020, buscou maximizar a sensação de amplitude através da eliminação de barreiras visuais, do uso de cores claras e da integração entre sala, cozinha e varanda. Os materiais selecionados priorizam a sustentabilidade e a durabilidade, criando um ambiente acolhedor e funcional.";
-            } else if (title === "Jardim Residencial Sustentável") {
-                details = "Projeto paisagístico para residência unifamiliar, desenvolvido em 2019. O jardim foi concebido com espécies nativas, reduzindo a necessidade de irrigação e manutenção. O projeto inclui sistema de captação de água da chuva para reuso na irrigação, compostagem de resíduos orgânicos e criação de áreas de convívio integradas à vegetação, promovendo a biodiversidade urbana.";
+            } else if (title === "Escola Profissionalizante Vila Aeroporto") {
+                details = "Projeto de escola profissionalizante desenvolvido para a região da Vila Aeroporto em Campinas. O conceito arquitetônico prioriza a integração entre formação técnica e comunidade, com espaços flexíveis que adaptam-se às diferentes necessidades de ensino. O projeto inclui laboratórios especializados, áreas de convivência e espaços multiuso que promovem a interação entre alunos e a comunidade local.";
+            } else if (title === "Centro de Convivência das Palmeiras") {
+                details = "Projeto de centro de convivência para idosos focado em acessibilidade e conforto. Desenvolvido em 2022, o centro conta com áreas de lazer, atividades físicas, culturais e sociais, além de espaços de atendimento de saúde. O projeto prioriza a circulação segura, a iluminação natural e a integração entre os diversos ambientes, criando um espaço acolhedor que promove o bem-estar e a socialização da terceira idade.";
+            } else if (title === "Complexo Esportivo FEPASA") {
+                details = "Projeto de complexo esportivo desenvolvido para a região da FEPASA em Campinas. O conceito integra múltiplas modalidades esportivas em um único espaço, com foco em acessibilidade e sustentabilidade. O projeto inclui quadras poliesportivas, pista de corrida, área de ginástica ao ar livre e espaços de convivência, promovendo a integração urbana e o esporte comunitário na região.";
             }
             
             document.getElementById('modal-details').textContent = details;
+            
+            // Setup carousel
+            setupCarousel(imageUrls);
             
             // Prevent scrolling when modal is open
             document.body.style.overflow = 'hidden';
             modal.classList.remove('hidden');
         }
+        
+        function setupCarousel(imageUrls) {
+            images = imageUrls;
+            currentSlide = 0;
+            
+            const carouselTrack = document.getElementById('carousel-track');
+            const indicators = document.getElementById('carousel-indicators');
+            
+            // Clear existing slides and indicators
+            carouselTrack.innerHTML = '';
+            indicators.innerHTML = '';
+            
+            // Create slides
+            images.forEach((imageUrl, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                slide.innerHTML = `<img src="${imageUrl}" alt="Project image ${index + 1}" class="modal-image w-full rounded-lg">`;
+                carouselTrack.appendChild(slide);
+                
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = `carousel-indicator ${index === 0 ? 'active' : ''}`;
+                indicator.addEventListener('click', () => goToSlide(index));
+                indicators.appendChild(indicator);
+            });
+            
+            updateCarousel();
+        }
+        
+        function updateCarousel() {
+            const carouselTrack = document.getElementById('carousel-track');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            
+            carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % images.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + images.length) % images.length;
+            updateCarousel();
+        }
+        
+        document.getElementById('carousel-next').addEventListener('click', nextSlide);
+        document.getElementById('carousel-prev').addEventListener('click', prevSlide);
         
         function closeProjectModal() {
             document.getElementById('project-modal').classList.add('hidden');
