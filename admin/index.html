@@ -4,16 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editor do Portfólio</title>
-  <meta name="netlify-cms" content="true" />
-  <script>
-    window.CMS_MANUAL_INIT = true;
-  </script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     CMS.init({
-      configPath: '/config.yml' // Força o CMS a buscar o config na raiz
+      backend: {
+        name: 'git-gateway',
+        branch: 'main'
+      },
+      media_folder: "images",
+      public_folder: "/images",
+      collections: [
+        {
+          name: "pages",
+          label: "Páginas",
+          files: [
+            {
+              file: "index.html",
+              label: "Página Inicial",
+              name: "home",
+              fields: [
+                { label: "Conteúdo", name: "body", widget: "markdown" }
+              ]
+            }
+          ]
+        }
+      ]
     });
   </script>
 </body>
