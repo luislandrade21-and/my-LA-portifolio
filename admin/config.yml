@@ -1,8 +1,10 @@
 backend:
-  name: github
-  repo: luislandrade21-and/my-la-portifolio
+  name: git-gateway
+  branch: main
+
 media_folder: "images"
 public_folder: "/images"
+
 collections:
   - name: "pages"
     label: "Páginas"
