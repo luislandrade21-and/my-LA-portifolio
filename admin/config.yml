@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main
   identity_url: https://portifoliola.netlify.app/.netlify/identity
+  site_domain: portifoliola.netlify.app
+  
 
 media_folder: "images"
 public_folder: "/images"
