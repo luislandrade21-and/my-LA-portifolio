@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="netlify-cms" content="true" />
-    <title>Editor do Portfólio</title>
-    <!-- Carrega o Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  </head>
-  <body>
-    <!-- O CMS será inicializado aqui -->
-    <noscript>
-      Por favor, habilite o JavaScript para usar o editor.
-    </noscript>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor do Portfólio</title>
+  <meta name="netlify-cms" content="true" />
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+</head>
+<body>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      configPath: '/config.yml' // Força o CMS a buscar o config na raiz
+    });
+  </script>
+</body>
 </html>
